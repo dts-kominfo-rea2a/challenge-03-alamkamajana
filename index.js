@@ -21,10 +21,32 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+function listBelanjaan(dataBelanjaan){
+  let totalList = []
+  for (let data of dataBelanjaan){
+    // console.log(` '- ${data.nama} x ${data.kuantitas}',`)
+    totalList.push(` '- ${data.nama} x ${data.kuantitas}',`)
+    // console.log(totalList)
+  }
+  return totalList
+}
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+let totalHarga = []
+let totalSum = 0
+function totalBelanjaan(dataBelanjaan){
+  const reducer = (accumulator, curr) => accumulator + curr;
+  for (let data of dataBelanjaan){
+    let total = data.harga * data.kuantitas
+    // console.log(total)
+    totalHarga.push(total)
+    // console.log(totalHarga)
+    totalSum = totalHarga.reduce(reducer);
+    // console.log(totalSum)
+  }
+  return totalSum;
+
+}
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
