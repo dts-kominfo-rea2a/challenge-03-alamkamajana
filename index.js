@@ -44,7 +44,7 @@ function totalBelanjaan(dataBelanjaan){
     totalSum = totalHarga.reduce(reducer);
     // console.log(totalSum)
   }
-  return totalSum;
+  return parseInt(totalSum);
 
 }
 
